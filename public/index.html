@@ -1,20 +1,287 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gemini AI Chatbot</title>
+  <title>Education IoT App | Platform Belajar IoT</title>
+  <!-- Menggunakan Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem; /* Menghindari konten tertutup navbar saat scroll */
+    }
+  </style>
 </head>
-<body>
-  <div class="container">
-    <h1>Education IoT Chatbot</h1>
-    <div id="chat-box" class="chat-box"></div>
-    <form id="chat-form">
-      <input type="text" id="user-input" placeholder="Type your message..." autocomplete="off" required />
-      <button type="submit">Send</button>
-    </form>
-  </div>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+  <!-- 1. Header (Navigation Bar) -->
+  <header class="bg-white shadow-sm fixed w-full z-50 top-0 left-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex items-center gap-2">
+          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          <span class="font-bold text-2xl text-gray-900">IoTEdu App</span>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+          <a href="#fitur" class="text-gray-600 hover:text-blue-600 font-medium transition">Fitur</a>
+          <a href="#cara-kerja" class="text-gray-600 hover:text-blue-600 font-medium transition">Cara Kerja</a>
+          <a href="#faq" class="text-gray-600 hover:text-blue-600 font-medium transition">FAQ</a>
+        </nav>
+        <div class="hidden md:flex items-center">
+          <a href="#demo-chatbot" class="bg-blue-600 text-white px-6 py-2.5 rounded-full font-medium hover:bg-blue-700 transition shadow-lg shadow-blue-200">Coba Chatbot</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <!-- 2. Hero Section -->
+    <section class="relative bg-white overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 pr-0 md:pr-10 z-10">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+            Kuasai Internet of Things Lebih Cepat dengan <span class="text-blue-600">Asisten AI</span>
+          </h1>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            Platform edukasi interaktif untuk memahami konsep sensor, konektivitas, dan cloud computing. Tanya apapun dan dapatkan rekomendasi proyek langsung dari asisten pintar kami.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#demo-chatbot" class="bg-blue-600 text-white text-center px-8 py-3.5 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-200">
+              Mulai Belajar Sekarang
+            </a>
+            <a href="#fitur" class="bg-gray-100 text-gray-700 text-center px-8 py-3.5 rounded-full font-semibold hover:bg-gray-200 transition">
+              Pelajari Fitur
+            </a>
+          </div>
+        </div>
+        <div class="md:w-1/2 mt-12 md:mt-0 relative">
+          <!-- Placeholder Gambar Kualitas Tinggi -->
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="IoT Education" class="rounded-2xl shadow-2xl relative z-10 object-cover h-[400px] w-full" />
+          <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-blue-100 rounded-full z-0"></div>
+          <div class="absolute -top-6 -right-6 w-40 h-40 bg-yellow-100 rounded-full z-0"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Features & Benefits -->
+    <section id="fitur" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Mengapa Belajar Bersama Kami?</h2>
+          <p class="text-gray-600">Kami tidak hanya memberikan materi statis, melainkan pengalaman interaktif yang menyesuaikan dengan gaya belajar dan proyek IoT yang sedang Anda kerjakan.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <!-- Feature 1 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+            <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Panduan Interaktif AI</h3>
+            <p class="text-gray-600">Dapatkan penjelasan materi IoT yang mudah dipahami selayaknya berdiskusi dengan mentor ahli, didukung oleh Google Gemini.</p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+            <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Rekomendasi Proyek</h3>
+            <p class="text-gray-600">Di setiap akhir sesi, AI akan merekomendasikan project hardware & software disesuaikan dengan tingkat pemahaman Anda.</p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Akses Belajar 24/7</h3>
+            <p class="text-gray-600">Platform yang selalu siap kapan saja untuk membantu Anda memecahkan kendala atau mengatasi error code pada project IoT.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Social Proof -->
+    <section class="py-16 bg-blue-600 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-blue-400">
+          <div class="p-4">
+            <div class="text-4xl font-extrabold mb-2">1000+</div>
+            <div class="text-blue-100 font-medium">Pelajar Terbantu</div>
+          </div>
+          <div class="p-4">
+            <div class="text-4xl font-extrabold mb-2">50+</div>
+            <div class="text-blue-100 font-medium">Rekomendasi Proyek</div>
+          </div>
+          <div class="p-4">
+            <div class="text-4xl font-extrabold mb-2">4.9/5</div>
+            <div class="text-blue-100 font-medium">Rating Pengguna</div>
+          </div>
+        </div>
+        <div class="mt-12 text-center max-w-4xl mx-auto italic text-blue-100 text-lg">
+          "Sebagai pemula di dunia IoT, platform ini sangat membantu saya memahami perbedaan Arduino dan ESP32. Rekomendasi project akhirnya juga sangat mudah diikuti!" — <span class="font-semibold text-white">Andi, Mahasiswa Teknik</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Portfolio / Demo Chatbot (Integrasi Aplikasi Utama) -->
+    <section id="demo-chatbot" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Coba Asisten Pintar Kami</h2>
+          <p class="text-gray-600">Tanyakan apa saja seputar komponen, kodingan, atau skema IoT di bawah ini.</p>
+        </div>
+        
+        <!-- UI CHATBOT UTAMA -->
+        <div class="bg-gray-50 rounded-2xl shadow-xl overflow-hidden border border-gray-200 flex flex-col h-[600px]">
+          <!-- Chat Header -->
+          <div class="bg-blue-600 px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow">
+                <span class="text-xl">🤖</span>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-lg">IoT Education Assistant</h3>
+                <p class="text-blue-200 text-sm">Online | Powered by Gemini AI</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Chat Box Area (Menggunakan ID bawaan JS) -->
+          <div id="chat-box" class="flex-1 p-6 overflow-y-auto space-y-4">
+            <!-- Pesan awal dari Bot -->
+            <div class="message bot">
+              Halo! Saya adalah asisten ahli edukasi Internet of Things (IoT). Ada yang bisa saya bantu jelaskan hari ini mengenai sensor, mikrokontroler, atau cloud?
+            </div>
+            <!-- Pesan dinamis akan muncul di sini dari script.js -->
+          </div>
+          
+          <!-- Chat Input Form (Menggunakan ID bawaan JS) -->
+          <div class="p-4 bg-white border-t border-gray-200">
+            <form id="chat-form" class="flex gap-3">
+              <input type="text" id="user-input" class="flex-1 px-4 py-3 bg-gray-50 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 transition" placeholder="Tanya tentang Arduino, ESP32, DHT11..." autocomplete="off" required />
+              <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-200 flex items-center gap-2 shadow-md">
+                <span>Kirim</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- AKHIR UI CHATBOT -->
+
+      </div>
+    </section>
+
+    <!-- 6. How It Works -->
+    <section id="cara-kerja" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-bold text-gray-900 mb-16">Cara Kerja Platform Ini</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 relative">
+          <!-- Line connecting steps (Desktop only) -->
+          <div class="hidden md:block absolute top-8 left-[15%] right-[15%] h-0.5 bg-blue-200 z-0"></div>
+          
+          <!-- Step 1 -->
+          <div class="relative z-10 flex flex-col items-center">
+            <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-blue-200 border-4 border-gray-50">1</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Akses & Tanyakan</h3>
+            <p class="text-gray-600">Mulai percakapan dengan menanyakan konsep dasar IoT, sensor, atau error pada kodingan yang Anda kerjakan.</p>
+          </div>
+          <!-- Step 2 -->
+          <div class="relative z-10 flex flex-col items-center">
+            <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-blue-200 border-4 border-gray-50">2</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Pahami Penjelasan</h3>
+            <p class="text-gray-600">AI akan memberikan penjelasan yang terstruktur, sopan, edukatif, dan sangat mudah dipahami oleh pemula.</p>
+          </div>
+          <!-- Step 3 -->
+          <div class="relative z-10 flex flex-col items-center">
+            <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-6 shadow-lg shadow-blue-200 border-4 border-gray-50">3</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Mulai Praktik Proyek</h3>
+            <p class="text-gray-600">Ikuti rekomendasi proyek kecil yang diberikan AI di setiap akhir sesi untuk memperkuat pemahaman Anda.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ -->
+    <section id="faq" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 mb-4">Pertanyaan Seputar IoTEdu</h2>
+          <p class="text-gray-600">Jawaban cepat untuk pertanyaan yang paling sering ditanyakan pengguna.</p>
+        </div>
+        
+        <div class="space-y-6">
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h4 class="text-lg font-bold text-gray-900 mb-2">Apakah platform ini berbayar?</h4>
+            <p class="text-gray-600">Tidak, IoTEdu dibuat sebagai Final Project dan digratiskan khusus untuk pelajar yang ingin memperdalam materi Internet of Things.</p>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h4 class="text-lg font-bold text-gray-900 mb-2">Topik perangkat keras apa saja yang bisa dibahas?</h4>
+            <p class="text-gray-600">Chatbot kami sangat paham tentang mikrokontroler umum (Arduino Uno, ESP8266, ESP32), sensor-sensor populer (DHT11, LDR, Ultrasonik), hingga protokol cloud (MQTT, HTTP).</p>
+          </div>
+          <div class="bg-gray-50 rounded-xl p-6 border border-gray-100">
+            <h4 class="text-lg font-bold text-gray-900 mb-2">Seberapa akurat jawaban yang diberikan AI?</h4>
+            <p class="text-gray-600">Kami menggunakan model <strong>Gemini 2.5 Flash</strong> dengan instruksi sistem (System Prompt) yang telah disesuaikan agar selalu memberikan konteks teknis yang valid, sopan, dan berfokus pada kurikulum edukasi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Final Call to Action -->
+    <section class="py-24 bg-gray-900 text-center relative overflow-hidden">
+      <!-- Background Decoration -->
+      <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-[800px] h-[800px] bg-blue-600 rounded-full opacity-20 blur-3xl z-0"></div>
+      
+      <div class="max-w-3xl mx-auto px-4 relative z-10">
+        <h2 class="text-4xl font-extrabold text-white mb-6">Siap Membangun Proyek IoT Pertama Anda?</h2>
+        <p class="text-xl text-gray-300 mb-10">Jangan biarkan kodingan error menghentikan rasa ingin tahu Anda. Mari diskusikan solusinya sekarang juga.</p>
+        <a href="#demo-chatbot" class="inline-block bg-blue-500 text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-blue-600 transition shadow-lg shadow-blue-500/50">
+          Coba Chatbot Gratis
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. Footer -->
+  <footer class="bg-white border-t border-gray-200 pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-12">
+        <div class="text-center md:text-left">
+          <div class="flex items-center justify-center md:justify-start gap-2 mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            <span class="font-bold text-xl text-gray-900">IoTEdu App</span>
+          </div>
+          <p class="text-gray-500 max-w-sm">
+            Platform edukasi pintar untuk memajukan talenta digital di bidang Internet of Things di Indonesia.
+          </p>
+        </div>
+        
+        <div class="flex flex-col md:flex-row gap-10 text-center md:text-left">
+          <div>
+            <h4 class="font-bold text-gray-900 mb-4">Navigasi</h4>
+            <ul class="space-y-2 text-gray-500">
+              <li><a href="#fitur" class="hover:text-blue-600 transition">Fitur Utama</a></li>
+              <li><a href="#cara-kerja" class="hover:text-blue-600 transition">Cara Kerja</a></li>
+              <li><a href="#demo-chatbot" class="hover:text-blue-600 transition">Aplikasi AI</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold text-gray-900 mb-4">Kontak</h4>
+            <ul class="space-y-2 text-gray-500">
+              <li>support@iotedu.id</li>
+              <li>Hacktiv8 Indonesia</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
+        <p>&copy; 2026 Danandjaya Saputra. Final Project Hacktiv8.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-gray-600 transition">Syarat & Ketentuan</a>
+          <a href="#" class="hover:text-gray-600 transition">Kebijakan Privasi</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
